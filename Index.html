@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chessboard</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+    margin: 0;
+  }
+  .chessboard-container {
+    display: inline-grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: "Segoe UI Symbol", "Arial Unicode MS", Arial, sans-serif;
+  }
+  /* Coordinates top row */
+  .coord-top {
+    grid-row: 1;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    line-height: 20px;
+  }
+  /* Coordinates bottom row */
+  .coord-bottom {
+    grid-row: 10;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    line-height: 20px;
+  }
+  /* Coordinates left column */
+  .coord-left {
+    grid-column: 1;
+    font-weight: bold;
+    color: black;
+    line-height: 50px;
+    text-align: center;
+  }
+  /* Coordinates right column */
+  .coord-right {
+    grid-column: 10;
+    font-weight: bold;
+    color: black;
+    line-height: 50px;
+    text-align: center;
+  }
+  .square {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+  }
+  .light {
+    background-color: #f0f8ff; /* very light blue */
+  }
+  .dark {
+    background-color: #4169e1; /* royal blue */
+  }
+  /* Black pieces color */
+  .black {
+    color: black;
+  }
+  /* White pieces color */
+  .white {
+    color: white;
+    text-shadow: 0 0 2px black;
+  }
+</style>
+</head>
+<body>
+  <div class="chessboard-container" aria-label="Chessboard" role="grid" aria-readonly="true">
+    <!-- Rows 8 to 1 with squares only -->
+    <!-- Row 8 -->
+    <div role="row" style="grid-row: 2; grid-column: 1 / span 8; display: contents;">
+      <div class="square dark black" role="gridcell" style="grid-column: 1;">&#9820;</div> <!-- Black Rook -->
+      <div class="square light black" role="gridcell" style="grid-column: 2;">&#9822;</div> <!-- Black Knight -->
+      <div class="square dark black" role="gridcell" style="grid-column: 3;">&#9821;</div> <!-- Black Bishop -->
+      <div class="square light black" role="gridcell" style="grid-column: 4;">&#9819;</div> <!-- Black Queen -->
+      <div class="square dark black" role="gridcell" style="grid-column: 5;">&#9818;</div> <!-- Black King -->
+      <div class="square light black" role="gridcell" style="grid-column: 6;">&#9821;</div> <!-- Black Bishop -->
+      <div class="square dark black" role="gridcell" style="grid-column: 7;">&#9822;</div> <!-- Black Knight -->
+      <div class="square light black" role="gridcell" style="grid-column: 8;">&#9820;</div> <!-- Black Rook -->
+    </div>
+
+    <!-- Row 7 -->
+    <div role="row" style="grid-row: 3; grid-column: 1 / span 8; display: contents;">
+      <div class="square light black" role="gridcell" style="grid-column: 1;">&#9823;</div> <!-- Black Pawn -->
+      <div class="square dark black" role="gridcell" style="grid-column: 2;">&#9823;</div>
+      <div class="square light black" role="gridcell" style="grid-column: 3;">&#9823;</div>
+      <div class="square dark black" role="gridcell" style="grid-column: 4;">&#9823;</div>
+      <div class="square light black" role="gridcell" style="grid-column: 5;">&#9823;</div>
+      <div class="square dark black" role="gridcell" style="grid-column: 6;">&#9823;</div>
+      <div class="square light black" role="gridcell" style="grid-column: 7;">&#9823;</div>
+      <div class="square dark black" role="gridcell" style="grid-column: 8;">&#9823;</div>
+    </div>
+
+    <!-- Row 6 -->
+    <div role="row" style="grid-row: 4; grid-column: 1 / span 8; display: contents;">
+      <div class="square dark" role="gridcell" style="grid-column: 1;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 2;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 3;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 4;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 5;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 6;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 7;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 8;"></div>
+    </div>
+
+    <!-- Row 5 -->
+    <div role="row" style="grid-row: 5; grid-column: 1 / span 8; display: contents;">
+      <div class="square light" role="gridcell" style="grid-column: 1;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 2;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 3;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 4;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 5;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 6;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 7;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 8;"></div>
+    </div>
+
+    <!-- Row 4 -->
+    <div role="row" style="grid-row: 6; grid-column: 1 / span 8; display: contents;">
+      <div class="square dark" role="gridcell" style="grid-column: 1;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 2;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 3;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 4;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 5;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 6;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 7;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 8;"></div>
+    </div>
+
+    <!-- Row 3 -->
+    <div role="row" style="grid-row: 7; grid-column: 1 / span 8; display: contents;">
+      <div class="square light" role="gridcell" style="grid-column: 1;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 2;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 3;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 4;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 5;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 6;"></div>
+      <div class="square light" role="gridcell" style="grid-column: 7;"></div>
+      <div class="square dark" role="gridcell" style="grid-column: 8;"></div>
+    </div>
+
+    <!-- Row 2 -->
+    <div role="row" style="grid-row: 8; grid-column: 1 / span 8; display: contents;">
+      <div class="square dark white" role="gridcell" style="grid-column: 1;">&#9817;</div> <!-- White Pawn -->
+      <div class="square light white" role="gridcell" style="grid-column: 2;">&#9817;</div>
+      <div class="square dark white" role="gridcell" style="grid-column: 3;">&#9817;</div>
+      <div class="square light white" role="gridcell" style="grid-column: 4;">&#9817;</div>
+      <div class="square dark white" role="gridcell" style="grid-column: 5;">&#9817;</div>
+      <div class="square light white" role="gridcell" style="grid-column: 6;">&#9817;</div>
+      <div class="square dark white" role="gridcell" style="grid-column: 7;">&#9817;</div>
+      <div class="square light white" role="gridcell" style="grid-column: 8;">&#9817;</div>
+    </div>
+
+    <!-- Row 1 -->
+    <div role="row" style="grid-row: 9; grid-column: 1 / span 8; display: contents;">
+      <div class="square light white" role="gridcell" style="grid-column: 1;">&#9814;</div> <!-- White Rook -->
+      <div class="square dark white" role="gridcell" style="grid-column: 2;">&#9816;</div> <!-- White Knight -->
+      <div class="square light white" role="gridcell" style="grid-column: 3;">&#9815;</div> <!-- White Bishop -->
+      <div class="square dark white" role="gridcell" style="grid-column: 4;">&#9813;</div> <!-- White Queen -->
+      <div class="square light white" role="gridcell" style="grid-column: 5;">&#9812;</div> <!-- White King -->
+      <div class="square dark white" role="gridcell" style="grid-column: 6;">&#9815;</div> <!-- White Bishop -->
+      <div class="square light white" role="gridcell" style="grid-column: 7;">&#9816;</div> <!-- White Knight -->
+      <div class="square dark white" role="gridcell" style="grid-column: 8;">&#9814;</div> <!-- White Rook -->
+    </div>
+  </div>
+</body>
+</html>
+</body>
+</html>
